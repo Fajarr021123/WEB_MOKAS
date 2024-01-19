@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+   
+
+    <style>
+        body {
+            background-color: #435585;
+            margin: 0;
+        }
+
+        .motor {
+            text-align: center;
+        }
+
+        h1 {
+    font-family: 'Lemon', sans-serif; /* Ganti 'Lemon' sesuai dengan font yang Anda punya */
+    font-style: normal;
+    color: #B1B7C7;
+    font-weight: bold;
+    font-size: 70px;
+}
+h2 {
+    font-family: 'Lemon', sans-serif; /* Ganti 'Lemon' sesuai dengan font yang Anda punya */
+    font-style: normal;
+    color: #B1B7C7;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+
+        .p {
+            font-family: 'Courier New', Courier, monospace;
+            font-style: normal;
+            color: #fcfcfc;
+            font-weight: bold;
+        }
+
+        .p1 {
+            font-family: 'Courier New', Courier, monospace;
+            font-style: normal;
+            color: #fcfcfc;
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        .dropdown-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding-top: 30px;
+            margin-top: -20px; /* Sesuaikan dengan kebutuhan */
+        }
+
+        .slide-and-title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background-size: 40%;
+    background-repeat: repeat;
+    background-position: center center;
+    margin-bottom: 0; /* Menghapus jarak di bawah */
+    
+}
+
+    
+
+        .slider img {
+            border-radius: 20px;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            max-height: 480px;
+        }
+
+        .motor-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .slide {
+            
+            max-width: 50%;
+            
+            border-radius: 1rem;
+            background-color: #818FB4;
+            padding: 1rem;
+            flex: 0 1 50%;
+            margin: 0 10px;
+            margin-left: 10rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5), 0 12px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .garis {
+            top: -500px;
+            max-width: 80%;
+            height: 5px;
+            border-radius: 1rem;
+            background-color: #333;
+            margin-left: 10%;
+            margin-right: 10%;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 32px rgba(0, 0, 0, 0.2);
+            margin-top: -400px; /* Sesuaikan dengan kebutuhan */
+        }
+
+        .card {
+            max-width: 30rem;
+            border-radius: 1rem;
+            background-color: #333;
+            padding: 1rem;
+            
+            margin: 0 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .infos {
+            display: flex;
+            gap: 1rem;
+            padding-bottom: 20px;
+        }
+
+        .image {
+            max-height: 10rem;
+            max-width: 15rem;
+            border-radius: 0.5rem;
+            background: white;
+            object-fit: cover;
+        }
+
+        .info {
+            height: 7rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-family: 'Courier New', Courier, monospace;
+            color: #fff;
+        }
+
+        .stats {
+            width: 100%;
+            border-radius: 0.5rem;
+            background-color: rgba(255, 255, 255, 1);
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            line-height: 1rem;
+            color: rgba(0, 0, 0, 1);
+        }
+
+        .request {
+            margin-top: 1.5rem;
+            width: 100%;
+            border: 1px solid transparent;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            transition: all .3s ease;
+        }
+
+        .request:hover {
+            background-color:#4CB9E7;
+            color: #fff;
+        }
+
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navbar {
+            background-color: #818FB4 !important;
+            border-radius: 25px;
+            top: 20px;
+            position:relative;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-toggler-icon {
+            background-color: white;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: white !important;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            color: #ccc !important;
+        }
+
+        .navbar-nav .nav-item {
+            height: 20px;
+            line-height: 6px;
+            margin-right: 10px;
+        }
+
+        .img_bg {
+    top: -500px;
+    position: relative;
+    z-index: 0;
+}
+
+.slide {
+    position: relative;
+    z-index: 1;
+}
+
+.slider img {
+    border-radius: 20px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="motor">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="search.html">Search</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin.html">Admin</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <div class="slide-and-title">
+            <div class="motor-title">
+                <div class="center-container">
+                    <dotlottie-player src="https://lottie.host/5df2bd85-7469-49c2-8fac-2e554eda06d4/KVvwkjzyTq.json" background="transparent" speed="1" style="width: 350px; height: 350px;" loop autoplay></dotlottie-player>
+                    
+                </div>
+                <h1>Motorku</h1>
+                <h2>Selamat Datang...</h2>
+            </div>
+            <div class="slide">
+                <div class="slider">
+                    <div><img src="https://dealer-yamaha.com/wp-content/uploads/2023/08/Mio-M3-Metallic-Cyan.png" alt="Image 1"></div>
+                    <div><img src="https://lajumotor.com/wp-content/uploads/2023/02/yamaha-r15-2023-1-1024x620.jpg" alt="Image 2"></div>
+                    <div><img src="https://rian-wsp.kompomotor.com/wp-content/uploads/2020/04/racing-red1-1.jpg" alt="Image 3"></div>
+                    <div><img src="https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202202151255313503V70891.png" alt="Image 4"></div>
+                </div>
+            </div>
+            <div class="img_bg">
+                <img src="bg1.png" alt="Background Image">
+            </div>
+        </div>
+        
+        <div class="garis"></div>
+        <div id="searchResults" class="card-container"></div>
+    </div>
+
+    <script>
+        function displayMotor(response) {
+            $('#searchResults').html('');
+            if (response.status && response.data.length > 0) {
+                response.data.forEach(function(motor) {
+                    $('#searchResults').append(`
+                        <div class="card">
+                            <div class="infos">
+                                <img class="image" src="${motor.link_url_gambar}" alt="${motor.nama_motor} Poster">
+                                <div class="info">
+                                    <p class="p1">${motor.nama_motor}</p>
+                                    <p class="p">Harga: Rp ${motor.harga}</p>
+                                    <p class="p">Tahun: ${motor.tahun}</p>
+                                    <p class="p">Tipe: ${motor.tipe}</p>
+                                </div>
+                            </div>
+                            <button class="request" type="button" onclick="window.open('${motor.link_url_gambar}', '_blank')">
+                                Hubungi Penjual
+                            </button>
+                        </div>
+                    `);
+                });
+            } else {
+                $('#searchResults').append('<p>Maaf, data motor tidak ditemukan.</p>');
+            }
+        }
+
+        const settings = {
+            async: true,
+            crossDomain: true,
+            url: `http://127.0.0.1:8000/api/motor`,
+            method: 'GET'
+        };
+
+        $.ajax(settings).done(function(response) {
+            displayMotor(response);
+        });
+
+        $(document).ready(function(){
+            $('.slider').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            });
+        });
+    </script>
+</body>
+
+</html>
